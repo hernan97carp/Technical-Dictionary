@@ -9,3 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("result").innerHTML = "BUSCASTE: <b>" + input + "</b>";
   });
 });
+
+fetch('/get_data')
+.then(response => response.json())
+.then(data => {
+    const list = document.getElementById("dictionary-list");
+    for (let word in data) {
+        let listItem = document.createElement("li");
+        listItem.innerHTML = `<strong>${word}:</strong> ${data[word]}`;
+        list.appendChild(listItem);
+    }
+})
+.catch(error => console.error('Error fetching data:', error));

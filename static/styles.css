@@ -28,3 +28,8 @@ p{
     font-size: 18px;
     color: green
 }
+ul {
+    list-style-type: none; /* Removes bullets */
+    padding: 0; /* Removes left padding */
+    margin: 0; /* Removes margin */
+}
